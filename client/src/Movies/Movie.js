@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useParams, Route, Link, useRouteMatch } from 'react-router-dom';
 
 const Movie = (props) => {
-  console.log(props)
   const [movie, setMovie] = useState();
   const { id } = useParams();
   useEffect(() => {
@@ -14,7 +13,7 @@ const Movie = (props) => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => {
-        console.log(response)
+        // console.log(response)
         setMovie(response.data);
       })
       .catch(error => {
